@@ -1,0 +1,23 @@
+@import url(https://fonts.googleapis.com/css?family=Hind:500);
+body {
+    font-family: "Hind", sans-serif;
+    background-color: rgb(238, 237, 237);
+
+}
+
+i {
+    color: rgb(80, 77, 80);
+}
+
+.inputError {
+    border: solid red 1px;
+}
+
+
+#orange {
+    border-left: solid 5px orange;
+}
+
+#green {
+    border-left: solid 5px rgb(0, 255, 128);
+}

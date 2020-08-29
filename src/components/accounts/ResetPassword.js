@@ -30,6 +30,7 @@ function ResetPassword(props) {
         ...values,
         email: "",
       });
+      props.history.push('/login')
     }
   }, [errors]);
 
@@ -38,45 +39,58 @@ function ResetPassword(props) {
   }
 
   return (
-    <div>
-    
-          <form
-            className="background-form"
-            onSubmit={handleSubmit}
-            autoComplete="off"
-            >
-              <div className="row">
-            <div className="col-xs-12 col-sm-12 col-md-7 mx-auto d-block">
-            <h5>RESET PASSWORD</h5>
-              <div className="input-group mb-3">
-                <span className="input-group-text" id="basic-addon1">
-                  <i className="fas fa-at"></i>
-                </span>
-                <input
-                  type="text"
-                  name="email"
-                  value={values.email}
-                  onChange={handleChange}
-                  className={`${errors.email && "inputError "} form-control`}
-                  placeholder="Enter Email"
-                />
-              </div>
-              {errors.email && (
-                <div className="text-danger">{errors.email}</div>
-              )}
-            </div>
 
-            <div className="col-xs-12 col-sm-12 col-md-7 mx-auto d-block">
-            <button
-              type="submit"
-              className="btn btn-outline-success form-control shadow-lg"
-            >
-              Reset
-            </button>
+    <div className="container__body">
+      <form onSubmit={handleSubmit} autoComplete="off">
+
+        <div className="row">
+      <h3 className="text-center form-title mb-4">Reset Password</h3>
+          <div className="col-lg-7 col-sm-12 mx-auto mb-3">
+            <div className="input-group shadow">
+              <span className="input-group-text" id="basic-addon1">
+                <svg
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  className="mail w-6 h-6"
+                >
+                  <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+                  <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+                </svg>
+              </span>
+              <input
+                name="email"
+                onChange={handleChange}
+                type="email"
+                value={values.email}
+                className="form-control py-2"
+                placeholder="Enter email"
+                aria-label="email"
+                aria-describedby="basic-addon1"
+              />
             </div>
+            {errors.email && (
+              <div className="form-text text-danger text-right">
+                {errors.email}
+              </div>
+            )}
+          </div>
+    
+          <div className="col-lg-7 col-sm-12 mx-auto mb-3">
+            <div className="input-group mx-auto d-block text-right">
+              <button
+                type="submit"
+                className="btn-submit btn btn-primary shadow p-2 px-4"
+              >
+                Reset
+              </button>
             </div>
-          </form>
+          </div>
         </div>
+      </form>
+    </div>
+
+
+   
   );
 }
 

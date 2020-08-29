@@ -6,10 +6,9 @@ import { register } from "../../actions/authActions";
 import RegisterValidate from "../../validations/RegisterValidations";
 
 const initialValues = {
-  name: "",
   email: "",
   password1: "",
-  password2: "",
+  password2: ""
 };
 function Register(props) {
   const [values, setValues] = useState(initialValues);
@@ -27,18 +26,11 @@ function Register(props) {
     setIsSebmitting(true);
   };
   useEffect(() => {
-    if (Object.keys(errors).length === 0 && isSubmitting) {
-      const newUser = {
-        email: values.email,
-        password1: values.password1,
-        password2: values.password2,
-      };
-      
-      register(newUser);
+    if (Object.keys(errors).length === 0 && isSubmitting) { 
+      register(values);
       console.log(values);
       setValues({
         ...values,
-        name: "",
         email: "",
         password1: "",
         password2: "",
@@ -55,33 +47,9 @@ function Register(props) {
       <div className="container__body">
         <form onSubmit={handleSubmit} autoComplete="off">
           <div className="row">
-            <div className="col-lg-7 col-sm-12 mx-auto mb-3">
-              <div className="input-group shadow">
-                <span className="input-group-text" id="basic-addon1">
-                  <svg
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                    className="mail w-6 h-6"
-                  >
-                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
-                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
-                  </svg>
-                </span>
-                <input
-                  name="name"
-                  value={values.name}
-                  onChange={handleChange}
-                  type="text"
-                  className="form-control py-2"
-                  placeholder="Enter name"
-                />
-              </div>
-              {errors.name && (
-                <div className="form-text text-danger text-right">
-                  {errors.name}
-                </div>
-              )}
-            </div>
+          <h3 className="text-center form-title mb-4">Signup</h3>
+
+            
 
             <div className="col-lg-7 col-sm-12 mx-auto mb-3">
               <div className="input-group shadow">

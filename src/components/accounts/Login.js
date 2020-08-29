@@ -33,6 +33,7 @@ function Login(props) {
         email: "",
         password: "",
       });
+      // window.location.reload();
     }
   }, [errors]);
 
@@ -43,7 +44,9 @@ function Login(props) {
   return (
     <div className="container__body">
       <form onSubmit={handleSubmit} autoComplete="off">
+
         <div className="row">
+      <h3 className="text-center form-title mb-4">Login</h3>
           <div className="col-lg-7 col-sm-12 mx-auto mb-3">
             <div className="input-group shadow">
               <span className="input-group-text" id="basic-addon1">
@@ -106,9 +109,16 @@ function Login(props) {
             )}
           </div>
           <div className="col-lg-7 col-sm-12 mx-auto mb-3">
-            <div className="form-group light">
-              Don't you have an account? <Link to="/register">Sigunp</Link>
+
+            <div className="login-flex-helper">
+              <div className="form-group light">
+                Don't you have an account? <Link to="/register">Sigunp</Link>
+              </div>
+              <div className="form-group light">
+                <Link to="/reset-password">Forget Password</Link>
+              </div>
             </div>
+
             <div className="input-group mx-auto d-block text-right">
               <button
                 type="submit"

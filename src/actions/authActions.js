@@ -32,7 +32,6 @@ export const loadUser = () => (dispatch, getState) => {
       });
     })
     .catch((err) => {
-      console.log(err)
       dispatch(returnErrors(err.response.data, err.response.status));
       dispatch({
         type: AUTH_ERROR,
@@ -74,7 +73,6 @@ export const register = (values) => (dispatch) => {
     },
   };
 
-  // const body = JSON.stringify({ email, password1, password2, name });
   axios
     .post(`${url}rest-auth/registration/`, values, config)
     .then((res) => {

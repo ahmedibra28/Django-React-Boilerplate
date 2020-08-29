@@ -92,3 +92,14 @@ svg {
     font-weight: bold;
     text-decoration: none;
 }
+
+.form-title {
+    color:  #3fa6f0;
+    text-transform: uppercase;
+}
+
+.login-flex-helper {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 7px;
+}

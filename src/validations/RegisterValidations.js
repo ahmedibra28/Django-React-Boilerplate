@@ -2,12 +2,7 @@ export default function RegisterValidate(values) {
   let errors = {};
   // Register Validation
 
-  if (!values.name) {
-    errors.name = "name is required";
-  } else if (values.name.length < 5) {
-    errors.name =
-      "Minimum length of the name must be equal or greater than 5 characters";
-  } else if (!values.email) {
+  if (!values.email) {
     errors.email = "Email is required";
   } else if (
     !/[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]/.test(values.email)

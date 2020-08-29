@@ -10,7 +10,7 @@ function Layout(props) {
     <ul className="navbar-nav mr-right mb-2 mb-lg-0">
       <li className="nav-item">
         <a className="nav-link">
-          {props.auth.user ? `Welcome ${props.auth.user.email}` : ""}
+          {props.auth.user ? props.auth.user.first_name ? `Welcome  ${props.auth.user.first_name}` : `Welcome ${props.auth.user.email}` : ""}
         </a>
       </li>
       <li className="nav-item">

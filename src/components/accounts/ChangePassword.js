@@ -40,7 +40,7 @@ function ChangePassword(props) {
       <form onSubmit={handleSubmit} autoComplete="off">
         <div className="row">
           
-
+          <h3 className="text-center form-title mb-4">Change Password</h3>
           <div className="col-lg-7 col-sm-12 mx-auto mb-3">
             <div className="input-group shadow">
               <span className="input-group-text" id="basic-addon1">

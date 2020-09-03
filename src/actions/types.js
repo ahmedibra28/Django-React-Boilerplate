@@ -1,3 +1,5 @@
+export const URL = "http://127.0.0.1:8000/";
+
 export const USER_LOADING = "USER_LOADING";
 export const USER_LOADED = "USER_LOADEDAUTH_ERROR";
 export const AUTH_ERROR = "AUTH_ERROR";

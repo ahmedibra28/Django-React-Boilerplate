@@ -17,10 +17,3 @@ DATABASES = {
 CORS_ORIGIN_WHITELIST = (
     'http://localhost:3000',
 )
-
-# CORS_ALLOW_ALL_ORIGINS = True
-
-# CORS_ALLOW_HEADERS = [
-#     'x-csrf-token',
-#     'x-requested-with'
-# ]
